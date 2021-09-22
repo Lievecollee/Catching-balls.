@@ -1,3 +1,55 @@
 function setup() {
 	createCanvas(600, 400);
 }
+
+var screen = 0;
+var y=-20;
+var x=200;
+var speed = 2;
+var score= 0;
+
+function draw() {
+	if(screen == 0){
+    startScreen()
+  }else if(screen == 1){
+  	gameOn()
+  }else if(screen==2){
+  	endScreen()
+  }	
+}
+
+function startScreen(){
+		background("lightblue")
+		fill(255)
+		textAlign(CENTER);
+		text('WELCOME THIS FANTASTIC BALL GAME!', width / 2, height / 2)
+		text('Click here to start', width / 2, height / 2 + 20);
+		reset();
+}
+
+function gameOn(){
+		background(0)
+  	ellipse(x,y,20,20)
+}
+
+function endScreen(){
+		background(150)
+		textAlign(CENTER);
+		text('GAME OVER', width / 2, height / 2)
+  	text("YOUR SCORE = " + score, width / 2, height / 2 + 20)
+		text('DO YOU WANNA TRY AGAIN?', width / 2, height / 2 + 40);
+}
+
+function mousePressed(){
+	if(screen==0){
+  	screen=1
+  }else if(screen==2){
+  	screen=0
+  }
+}
+
+function reset(){
+	  score=0;
+  	speed=2;
+  	y=-20;
+}
