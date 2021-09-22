@@ -29,6 +29,8 @@ function startScreen(){
 
 function gameOn(){
 		background(0)
+		text("Score = " + score, 30,20)
+		text("Highscore = " + score, 42,40)
   	ellipse(x,y,20,20)
 }
 
