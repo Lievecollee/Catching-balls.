@@ -38,7 +38,7 @@ function gameOn(){
   	rect(mouseX,height-10,50,30)
 			y+= speed;
   	if(y>height){
-  	screen =2
+  	screen = 2
 	 }
 }
 
