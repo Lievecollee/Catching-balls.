@@ -6,7 +6,8 @@ var screen = 0;
 var y=-20;
 var x=200;
 var speed = 2;
-var score= 0;
+var score = 0;
+var highscore = 0;
 
 function draw() {
 	if(screen == 0){
@@ -30,7 +31,7 @@ function startScreen(){
 function gameOn(){
 		background(0);
 		text("Score = " + score, 30,20);
-		text("Highscore = " + score, 42,40);
+		text("Highscore = " + highscore, 42,40);
 		fill(255);
   	ellipse(100,100,20,20);
 }
