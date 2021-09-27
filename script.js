@@ -19,27 +19,28 @@ function draw() {
 }
 
 function startScreen(){
-		background("lightblue")
-		fill(255)
+		background("lightblue");
+		fill(255);
 		textAlign(CENTER);
-		text('WELCOME THIS FANTASTIC BALL GAME!', width / 2, height / 2)
-		text('Click here to start', width / 2, height / 2 + 20);
+		text('Welkom bij "Catching Balls"!', width / 2, height / 2)
+		text('Klik op het scherm om het spel te beginnen', width / 2, height / 2 + 20);
 		reset();
 }
 
 function gameOn(){
-		background(0)
-		text("Score = " + score, 30,20)
-		text("Highscore = " + score, 42,40)
-  	ellipse(x,y,20,20)
+		background(0);
+		text("Score = " + score, 30,20);
+		text("Highscore = " + score, 42,40);
+		fill(255);
+  	ellipse(100,100,20,20);
 }
 
 function endScreen(){
-		background(150)
+		background(150);
 		textAlign(CENTER);
-		text('GAME OVER', width / 2, height / 2)
-  	text("YOUR SCORE = " + score, width / 2, height / 2 + 20)
-		text('DO YOU WANNA TRY AGAIN?', width / 2, height / 2 + 40);
+		text('GAME OVER', width / 2, height / 2);
+  	text("YOUR SCORE = " + score, width / 2, height / 2 + 20);
+		text('Opnieuw proberen?', width / 2, height / 2 + 40);
 }
 
 function mousePressed(){
