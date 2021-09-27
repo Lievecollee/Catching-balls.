@@ -34,6 +34,12 @@ function gameOn(){
 		text("Highscore = " + highscore, 42,40);
 		fill(255);
   	ellipse(100,100,20,20);
+		rectMode(CENTER)
+  	rect(mouseX,height-10,50,30)
+			y+= speed;
+  	if(y>height){
+  	screen =2
+	 }
 }
 
 function endScreen(){
