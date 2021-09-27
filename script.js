@@ -2,7 +2,7 @@ function setup() {
 	createCanvas(600, 400);
 }
 
-var screen = 0;
+var screen = 1;
 var y=-20;
 var x=200;
 var speed = 2;
