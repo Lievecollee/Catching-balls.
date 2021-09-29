@@ -44,6 +44,8 @@ function gameOn(){
   	y=-20
     speed+=.5
     score+= 1
+		if (score>highscore)
+		 	highscore = score
   }
 	if(y==-20){
   	pickRandom();
@@ -58,7 +60,7 @@ function endScreen(){
 		background(150);
 		textAlign(CENTER);
 		text('GAME OVER', width / 2, height / 2);
-  	text("YOUR SCORE = " + score, width / 2, height / 2 + 20);
+  	text("Je score is = " + score, width / 2, height / 2 + 20);
 		text('Opnieuw proberen?', width / 2, height / 2 + 40);
 }
 
