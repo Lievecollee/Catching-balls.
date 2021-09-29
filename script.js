@@ -1,5 +1,6 @@
 function setup() {
 	createCanvas(600, 400);
+	bb = loadImage("druppel.png");
 }
 
 var screen = 0;
@@ -18,6 +19,7 @@ function draw() {
   	endScreen()
   }	
 }
+  
 
 function startScreen(){
 		background("lightblue");
@@ -33,14 +35,14 @@ function gameOn(){
 		text("Score = " + score, 30,20);
 		text("Highscore = " + highscore, 42,40);
 		fill(255);
-  	ellipse(x,y,20,20);
+  	image(bb,x,y,30,30);
 		rectMode(CENTER)
   	rect(mouseX,height-10,50,30)
 			y+= speed;
   	if(y>height){
   	screen = 2
 	 }
-	  if(y>height-10 && x>mouseX-20 && x<mouseX+20){
+	  if(y>height-10 && x>mouseX-30 && x<mouseX+30){
   	y=-20
     speed+=.5
     score+= 1
