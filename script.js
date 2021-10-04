@@ -2,6 +2,10 @@ function setup() {
 	createCanvas(600, 400);
 	bb = loadImage("druppel.png");
 	achtergrond = loadImage("achtergrond.jpg")
+	emmer = loadImage("emmer.png")
+	soundFormats('m4a','mp3','ogg')
+	druppelgeluid = loadSound("druppelgeluid.mp3")
+	wind = loadSound("wind.mp3")
 }
 
 var screen = 0;
@@ -37,7 +41,7 @@ function gameOn(){
 		fill(255);
   	image(bb,x,y,30,30);
 		rectMode(CENTER);
-  	rect(,mouseX,height-10,50,30);
+  	image(emmer,mouseX,height-50,60,60);
 			y+= speed;
   	if(y>height){
   	screen = 2
@@ -46,6 +50,7 @@ function gameOn(){
   	y=-20
     speed+=.5
     score+= 1
+		druppelgeluid.play()
 		if (score>highscore);
 		 	highscore = score
   }
@@ -69,6 +74,7 @@ function endScreen(){
 function mousePressed(){
 	if(screen==0){
   	screen=1
+		wind.play()
   }else if(screen==2){
   	screen=0
   }
