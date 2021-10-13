@@ -50,7 +50,6 @@ class Druppel {
 	checkCollision() {
 		if (player.y < this.y) {
 			if (player.x + player.w > this.x && player.x < this.x + this.w) {
-
 				druppelgeluid.play()
 				score += 1
 				if (score > highscore);
@@ -71,15 +70,15 @@ class Druppel {
 class Emmer {
 	constructor() {
 		this.x = 100;
-		this.y = height - 10;
+		this.y = height - 40;
 		this.w = 50;
-		this.h = 10;
+		this.h = 50;
 	}
 
 	draw() {
-		rectMode(CENTER)
+		//rectMode(CENTER)
 		this.x = mouseX;
-		rect(this.x, this.y, this.w, this.h);
+		image(emmer, this.x, this.y, this.w, this.h);
 	}
 }
 
@@ -105,7 +104,7 @@ function startScreen() {
 function gameOn() {
 	background(achtergrond);
 	fill(255);
-	text("Score = " + score, 30, 20,);
+	text("Score = " + score, 30, 20);
 	text("Highscore = " + highscore, 42, 40);
 	player.draw();
 
@@ -125,14 +124,6 @@ function gameOn() {
 	});
 
 	this.y += speed;
-	if (this.y > height) {
-		screen = 2
-	}
-
-	if (this.y == -20) {
-		pickRandom();
-	}
-
 }
 
 function endScreen() {
@@ -141,18 +132,15 @@ function endScreen() {
 	textAlign(CENTER);
 	text('GAME OVER', width / 2, height / 2);
 	text("Je score is = " + score, width / 2, height / 2 + 20);
-	text('Opnieuw proberen?', width / 2, height / 2 + 40);
-}
-
-function pickRandom() {
-	x = random(20, width - 20)
+	text("Je highscore is = " + highscore, width / 2, height / 2 + 40)
+	text('Opnieuw proberen?', width / 2, height / 2 + 60);
 }
 
 function mousePressed() {
 	if (screen == 0) {
 		screen = 1;
 		wind.play()
-	} 
+	}
 	else if (screen == 2) {
 		druppels = [];
 		screen = 0;
